@@ -2,10 +2,10 @@
 <resources>
 
     <declare-styleable name="ShoppingView">
-        <attr name="sv_bg_color" format="color"></attr>
-        <attr name="sv_text" format="string"></attr>
-        <attr name="sv_text_size" format="dimension"></attr>
-        <attr name="sv_duration" format="integer"></attr>
+        <attr name="sv_bg_color" format="color" />
+        <attr name="sv_text" format="string" />
+        <attr name="sv_text_size" format="dimension" />
+        <attr name="sv_duration" format="integer" />
     </declare-styleable>
 
 </resources>

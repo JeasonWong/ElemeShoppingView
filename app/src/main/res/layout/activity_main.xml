@@ -27,7 +27,7 @@
         android:layout_marginTop="10dp"
         app:sv_bg_color="#EED8AE"
         app:sv_duration="800"
-        app:sv_text="shopping"
+        app:sv_text="SHOPPING"
         app:sv_text_size="22sp" />
 
     <me.wangyuwei.shoppoing.ShoppingView
