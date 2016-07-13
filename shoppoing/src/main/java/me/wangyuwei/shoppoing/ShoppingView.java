@@ -110,6 +110,8 @@ public class ShoppingView extends View {
             MAX_WIDTH = (int) (MAX_HEIGHT * 3.5);
         }
 
+        mTextPosition = MAX_WIDTH / 2;
+        mMinusBtnPosition = MAX_HEIGHT / 2;
     }
 
     @Override
@@ -425,6 +427,17 @@ public class ShoppingView extends View {
         animatorTextRotate.start();
         animatorTextMove.start();
         animatorBtnMove.start();
+    }
+
+    /**
+     * 设置购买数量
+     *
+     * @param num 购买数量
+     */
+    public void setTextNum(int num) {
+        mNum = num;
+        mState = STATE_ROTATE_OVER;
+        invalidate();
     }
 
     public void setOnShoppingClickListener(ShoppingClickListener shoppingClickListener) {

@@ -26,5 +26,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ShoppingView mSv2 = (ShoppingView) findViewById(R.id.sv_2);
+        mSv2.setTextNum(1);
+
     }
 }
