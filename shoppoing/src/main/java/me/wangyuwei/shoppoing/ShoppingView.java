@@ -163,10 +163,9 @@ public class ShoppingView extends View {
      * @param canvas 画板
      */
     private void drawBgMove(Canvas canvas) {
-        mPath.reset();
-        mPath.addRoundRect(new RectF(mWidth, 0, MAX_WIDTH, MAX_HEIGHT), 1000, 1000, Path.Direction.CW);
-        mPath.close();
-        canvas.drawPath(mPath, mPaintBg);
+        canvas.drawArc(new RectF(mWidth, 0, mWidth + MAX_HEIGHT, MAX_HEIGHT), 90, 180, false, mPaintBg);
+        canvas.drawRect(new RectF(mWidth + MAX_HEIGHT / 2, 0, MAX_WIDTH - MAX_HEIGHT / 2, MAX_HEIGHT), mPaintBg);
+        canvas.drawArc(new RectF(MAX_WIDTH - MAX_HEIGHT, 0, MAX_WIDTH, MAX_HEIGHT), 180, 270, false, mPaintBg);
     }
 
     /**
