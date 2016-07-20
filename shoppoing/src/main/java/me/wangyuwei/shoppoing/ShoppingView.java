@@ -1,5 +1,7 @@
 package me.wangyuwei.shoppoing;
 
+import android.animation.Animator;
+import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -15,6 +17,9 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * 作者： 巴掌 on 16/7/10 17:59
@@ -313,6 +318,9 @@ public class ShoppingView extends View {
      * 开始旋转动画
      */
     private void startRotateAnim() {
+
+        Collection<Animator> animatorList = new ArrayList<>();
+
         ValueAnimator animatorTextRotate;
         if (mIsForward) {
             animatorTextRotate = ValueAnimator.ofInt(0, 360);
@@ -336,9 +344,10 @@ public class ShoppingView extends View {
                     }
                 }
 
-                invalidate();
             }
         });
+
+        animatorList.add(animatorTextRotate);
 
         ValueAnimator animatorAlpha;
         if (mIsForward) {
@@ -363,9 +372,10 @@ public class ShoppingView extends View {
                     }
                 }
 
-                invalidate();
             }
         });
+
+        animatorList.add(animatorAlpha);
 
         ValueAnimator animatorTextMove;
         if (mIsForward) {
@@ -390,9 +400,10 @@ public class ShoppingView extends View {
                     }
                 }
 
-                invalidate();
             }
         });
+
+        animatorList.add(animatorTextMove);
 
         ValueAnimator animatorBtnMove;
         if (mIsForward) {
@@ -421,11 +432,12 @@ public class ShoppingView extends View {
             }
         });
 
+        animatorList.add(animatorBtnMove);
 
-        animatorAlpha.start();
-        animatorTextRotate.start();
-        animatorTextMove.start();
-        animatorBtnMove.start();
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.setDuration(mDuration);
+        animatorSet.playTogether(animatorList);
+        animatorSet.start();
     }
 
     /**

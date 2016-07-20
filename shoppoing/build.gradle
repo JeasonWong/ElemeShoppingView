@@ -3,7 +3,7 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'me.wangyuwei' // Change this to match your package name
-version = '1.0.2' // Change this to match your version number
+version = '1.0.3' // Change this to match your version number
 
 android {
     compileSdkVersion 23
@@ -13,7 +13,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 3
-        versionName "1.0.2"
+        versionName "1.0.3"
     }
     buildTypes {
         release {
@@ -61,7 +61,7 @@ bintray {
         desc = "A cool shopping cart effect."
 
         version {
-            name = '1.0.2'
+            name = '1.0.3'
             desc = 'A cool shopping cart effect.'
             vcsTag = 'android, shopping cart, view'
         }

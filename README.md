@@ -1,6 +1,8 @@
 ## What's ElemeShoppingView ?
 A cool shopping cart effect.
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ElemeShoppingView-green.svg?style=true)](https://android-arsenal.com/details/1/3946)
+
 ## Demo
 ![Markdown](http://i2.piimg.com/1070/02257f9316bbdcb6.gif)
 
@@ -29,7 +31,7 @@ Step 2. Add the dependency:
 
 ```gradle
 dependencies {
-  compile 'me.wangyuwei:shoppoing:1.0.2'
+  compile 'me.wangyuwei:shoppoing:1.0.3'
 }
 ```
 
