@@ -31,7 +31,7 @@ Step 2. Add the dependency:
 
 ```gradle
 dependencies {
-  compile 'me.wangyuwei:shoppoing:1.0.3'
+  compile 'me.wangyuwei:shoppoing:1.0.5'
 }
 ```
 

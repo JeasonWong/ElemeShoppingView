@@ -37,7 +37,6 @@ public class ShoppingView extends View {
 
     private Paint mPaintBg, mPaintText, mPaintNum;
     private Paint mPaintMinus;
-    private Path mPath;
 
     //是否是向前状态（= = 名字不好取，意思就是区分向前和回退状态）
     private boolean mIsForward = true;
@@ -106,7 +105,6 @@ public class ShoppingView extends View {
         mPaintNum.setTextSize(textSize / 3 * 4);
         mPaintNum.setStrokeWidth(textSize / 6);
         mPaintNum.setAntiAlias(true);
-        mPath = new Path();
 
         MAX_WIDTH = getTextWidth(mPaintText, mShoppingText) / 5 * 8;
         MAX_HEIGHT = textSize * 2;
@@ -247,6 +245,9 @@ public class ShoppingView extends View {
                 if (mState == STATE_NONE) {
                     mNum++;
                     startMoveAnim();
+                    if (mShoppingClickListener != null) {
+                        mShoppingClickListener.onAddClick(mNum);
+                    }
                 } else if (mState == STATE_ROTATE_OVER) {
                     if (isPointInCircle(new PointF(event.getX(), event.getY()), new PointF(MAX_WIDTH - MAX_HEIGHT / 2, MAX_HEIGHT / 2), MAX_HEIGHT / 2)) {
                         if (mNum > 0) {
@@ -275,7 +276,7 @@ public class ShoppingView extends View {
                     }
                 }
 
-                break;
+                return true;
         }
         return super.onTouchEvent(event);
     }
